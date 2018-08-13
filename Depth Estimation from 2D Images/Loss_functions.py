@@ -7,12 +7,8 @@ e = 1e-6 # for numerical stability
 
 # Scale-Invariant Mean Squared Error
 def SIMSE(y_true, y_pred):
-    s1 = K.log(y_pred+e) - K.log(y_true+e)
-    s2 = K.sum(K.log(y_true+e) - K.log(y_pred+e)) / n
-    s = s1 + s2
-
-    simse = K.sum(K.pow(s, 2)) / (2*n)
-    return simse + e
+    s = K.log(y_pred+e) - K.log(y_true+e) + K.sum(K.log(y_true+e) - K.log(y_pred+e)) / n
+    return K.sum(K.pow(s, 2)) / (2*n)
 
 # Scale-Invariant Loss
 def SILoss(y_true, y_pred):

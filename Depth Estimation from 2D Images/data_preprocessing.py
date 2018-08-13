@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 
 file = "nyu_depth_v2_labeled.mat" # data
 img_folder = "depth_dataset/rgb_data"
-dep_folder = "depth_dataset/depth_target/"
+dep_folder = "depth_dataset/depth_target"
 
 # if the directories don't  exist, create them
 if not os.path.exists(img_folder):
-    os.mkdir(img_folder)
+    os.makedirs(img_folder)
 if not os.path.exists(dep_folder):
-    os.mkdir(dep_folder)
+    os.makedirs(dep_folder)
 
 # load the data
 f = h5py.File(file)
