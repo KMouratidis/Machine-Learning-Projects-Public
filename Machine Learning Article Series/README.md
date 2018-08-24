@@ -3,8 +3,9 @@
 This is a series of articles that is meant to introduce a non-math person into various ML algorithms, and Data Science. 
 It is not meant to be a comprehensive introduction to ML, and it is not meant to cover and details.
 The goal is to create **short** introductions for publication in a certain website. They are listed below, in order.
+I highly advise taking (online) courses (check out [my course reviews here](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md)) and reading books.
 
-### General topics covered:
+### [General topics covered](https://github.com/KMouratidis/Machine-Learning-Projects-Public/tree/master/Machine%20Learning%20Article%20Series/General%20topics):
 
 1) The difference between AI, ML, DL
 2) 10 AI breakthroughs
@@ -13,7 +14,7 @@ The goal is to create **short** introductions for publication in a certain websi
 5) An overview of Computer Vision
 6) An overview of Natural Language Processing
 
-### ML series topics covered:
+### [ML series topics](https://github.com/KMouratidis/Machine-Learning-Projects-Public/tree/master/Machine%20Learning%20Article%20Series/ML%20Algorithms%20series):
 
 1) Linear Regression
 2) Polynomial Regression
