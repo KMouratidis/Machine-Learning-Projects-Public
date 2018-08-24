@@ -16,7 +16,7 @@ output_shape = (63, 44, 1)
 
 # Other params
 visualize = True
-save = False
+save = True
 batch_size = 16
 epochs_coarse = 5
 epochs_fine = 20
