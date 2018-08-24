@@ -1,17 +1,26 @@
-# Machine Learning / Data Science / Deep Learning / Programming course reviews
+# Course reviews
 
-Lists by topic:
+## Lists by topic:
 
-Deep Learning:
+#### Deep Learning:
 
-* 1 
-* 2
+* [Coursera Deep Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-deep-learning-specialization-by-andrew-ng)
+* [MIT Artificial Intelligence](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-mit-6034-artificial-intelligence-fall-2010)
+* [Udemy Zero to Deep Learning](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#3-zero-to-deep-learning)
 
-Mathematics:
+#### Machine Learning + Data Science:
 
-* 1
-* 2
+* [Coursera Machine Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-machine-learning-by-andrew-ng)
+* [MIT Introduction to Computational Thinking and Data Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-mit-60002-introduction-to-computational-thinking-and-data-science-fall-2016)
+* [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
+* [Udemy The Complete SQL Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-the-complete-sql-bootcamp)
+* [MIT Artificial Intelligence](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-mit-6034-artificial-intelligence-fall-2010)
 
+#### Mathematics:
+
+* todo
+
+## Lists by institution:
 
 ### MIT OpenCourseWare (free)
 
