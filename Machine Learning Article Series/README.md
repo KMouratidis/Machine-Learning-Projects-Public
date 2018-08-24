@@ -1,15 +1,30 @@
 ## Machine Learning Article/Tutorial Series
 
-This is a series of articles that is meant to introduce a non-math person into various ML algorithms. 
+This is a series of articles that is meant to introduce a non-math person into various ML algorithms, and Data Science. 
 It is not meant to be a comprehensive introduction to ML, and it is not meant to cover and details.
-The goal is to create **short** introductions for publication in a certain website. Here are some of the topics covered:
+The goal is to create **short** introductions for publication in a certain website. They are listed below, in order.
 
-* Linear Regression
-* Decision Tree
-* Neural Network
-* Support Vector Machines
-* K Mean Clustering
-* K Nearest Neighbor
-* Random Forest
-* Naive Bayes Classifier
-* Polynomial Regression
+### General topics covered:
+
+1) The difference between AI, ML, DL
+2) 10 AI breakthroughs
+3) How to get started with Artificial Intelligence (can be read first)
+4) The most important Python libraries for AI and Machine Learning
+5) An overview of Computer Vision
+6) An overview of Natural Language Processing
+
+### ML series topics covered:
+
+1) Linear Regression
+2) Polynomial Regression
+3) Support Vector Machines
+4) K Nearest Neighbor
+5) K Mean Clustering
+6) Decision Tree
+7) Random Forest
+8) Naive Bayes Classifier
+9) Neural Networks
+
+### Other topics
+
+1) Data preprocessing and cleaning
