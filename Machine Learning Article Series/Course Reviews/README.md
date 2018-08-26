@@ -18,7 +18,8 @@
 
 #### Mathematics:
 
-* todo
+* [Coursera Mathematics for Machine Learning Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#3-mathematics-for-machine-learning-specialization)
+* [Coursera Data Science Math Skills](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#4-data-science-math-skills)
 
 ## Lists by institution:
 
@@ -66,6 +67,16 @@ Overall, I cannot recommend this specialization enough. There are lots of people
 to time, back then it took me less than a month for the 4 courses. Experienced people in Deep Learning that only did the exercises
 could finish one course per day (I assume they also had jobs). I don't recommend rushing it. Contrary to what I did at the time,
 I insist you take your time and read some papers and complementary material, just to get a better view of the field.
+
+#### 3) [Mathematics for Machine Learning Specialization](https://www.coursera.org/specializations/mathematics-machine-learning)
+
+This 3-course specialization is taught by different Imperial College professors each focusing on a different subject: Linear Algebra, Multivariate Calculus, PCA - all necessary for Data Science / Machine Learning. All three courses have lectures and exercises, and all three professors are great, the explanations are clear and consise. You also get a *cheatsheet for every course* that includes the basic concepts and formulas. Take note, this is a math course and (as it to be expected) you will have to read formulas, but it is an applied course which means that instead of solving exercises on paper you write code; **quizzes require coding**. If you don't have a background in math, these may be considered as medium difficulty. A 1-1.25x is a good speed, at least if you want to also take hand notes (which I highly suggest you do).
+
+The first course is taught by David Dye and touches on the subject of Linear Algebra. It begins by explaining vectors, vector products, and then moves to coordinate systems, change of bases, matrices, introduction to some notation, eigenand everything else you would expect in a Linear Algebra introductory course. The fifth week focuses on eigenvectors and is taught by Samuel Cooper who also teaches the second course. I found his pace easier to follow, and is (slightly) more energetic. In the course he focuses on Multivariate Calculus. He has some neat visualizations throughout and some fun games (e.g. 'The Sandpit') which help you understand how optimization works. Concepts like derivatives, hessians, the chain rule, are well explained and you are also introduced to function approximation with Talor Series, constrained optimization, and Gradient Descent. In the final week, David Dye returns to teach us about Linear Regression, and after completing the programming assignment you can boast having solid enough foundations. Finally, the third course is about performing Principal Component Analysis, and is taught by Marc Deisenroth. In the first three (out of four) weeks, he presents from scratch all of the concepts necessary: mean, variance, covariance, vectors/matrix products, projections, everything you are supposed to know after completing the second course. His style is more strictly focused on the mathematics. Frankly, I found this an unnecessary repetition, but for someone else it might be a great quick review, use your discretion. It is the fourth and final week where you actually go into the PCA, where I found the programming assignment to be just sufficiently hard to ensure you know what you're doing.
+
+#### 4) [Data Science Math Skills](https://www.coursera.org/learn/datasciencemathskills/)
+
+Linear Algebra and Multivariate Calculus are not the only topics you need to cover. In fact, if your mathematics background is relative week, I'd advise starting here before the *Mathematics for Machine Learning* specialization. This is only a single course but the breadth of topics covered make it a must-take. You'll learn about Sets, notation, some basic algebra, the coordinate system, functions, tangents and derivatives, exponents and logarithms, and some even statistics (probabilities, permutations, combinations, Bayes' theorem). It has simple quizzes, and it is easy to complete in a day or two (speed-wise: 1.5-2x).
 
 ### Udemy (paid)
 
