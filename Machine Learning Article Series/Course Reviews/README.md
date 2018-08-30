@@ -17,7 +17,7 @@
 
 * [Coursera Machine Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-machine-learning-by-andrew-ng)
 * [MIT Introduction to Computational Thinking and Data Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-mit-60002-introduction-to-computational-thinking-and-data-science-fall-2016)
-* Applied Data Science with Python Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#6-applied-data-science-with-python-specialization)
+* [Applied Data Science with Python Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#6-applied-data-science-with-python-specialization)
 * [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
 * [Udemy The Complete SQL Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-the-complete-sql-bootcamp)
 * [MIT Artificial Intelligence](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-mit-6034-artificial-intelligence-fall-2010)
