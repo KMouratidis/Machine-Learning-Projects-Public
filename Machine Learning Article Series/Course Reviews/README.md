@@ -2,6 +2,11 @@
 
 ## Lists by topic:
 
+#### Python:
+
+* [Python for Everybody Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#5-python-for-everybody-specialization)
+* [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
+
 #### Deep Learning:
 
 * [Coursera Deep Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-deep-learning-specialization-by-andrew-ng)
@@ -12,6 +17,7 @@
 
 * [Coursera Machine Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-machine-learning-by-andrew-ng)
 * [MIT Introduction to Computational Thinking and Data Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-mit-60002-introduction-to-computational-thinking-and-data-science-fall-2016)
+* Applied Data Science with Python Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#6-applied-data-science-with-python-specialization)
 * [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
 * [Udemy The Complete SQL Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-the-complete-sql-bootcamp)
 * [MIT Artificial Intelligence](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-mit-6034-artificial-intelligence-fall-2010)
@@ -77,6 +83,14 @@ The first course is taught by David Dye and touches on the subject of Linear Alg
 #### 4) [Data Science Math Skills](https://www.coursera.org/learn/datasciencemathskills/)
 
 Linear Algebra and Multivariate Calculus are not the only topics you need to cover. In fact, if your mathematics background is relative week, I'd advise starting here before the *Mathematics for Machine Learning* specialization. This is only a single course but the breadth of topics covered make it a must-take. You'll learn about Sets, notation, some basic algebra, the coordinate system, functions, tangents and derivatives, exponents and logarithms, and some even statistics (probabilities, permutations, combinations, Bayes' theorem). It has simple quizzes, and it is easy to complete in a day or two (speed-wise: 1.5-2x).
+
+#### 5) [Python for Everybody Specialization](https://www.coursera.org/specializations/python)
+
+Python for Everybody is a 5-course specialization offered by the University of Michigan and taught by Charles Severance, yet another great professor. This was my first serious attempt (I had tried some other sources previously with no success) at learning python and I was not dissapointed. Having virtually zero background knowledge in programming, this was the best introduction on the subject. You get lectures, exercises, concepts, all in a well-formatted and easily digestible manner spaced across ~23 weeks (+6 for the capstone which I didn't take). What really helped me solidify my knowledge was following a certain learning process: read the slides, watch the lectures, read the book chapter (yes, it has a very well-written **free book** to accompany the course), which of course you can do in any order. This was extremely useful; a quick overview, a lecture with better explanation, and then a detailed overview of the topic. This specialization will walk you through all the steps you need to take to get started. A few words about what programming is and why we do it (this is not an introduction to Computer Science though, take a look at Harvard's introduction to C.S. for that), setting up a Python environment, variables, expressions, functions, control flow (if-else, loops), data types (strings, lists, dictionaries, tuples), useful packages (dealing with regular expressions, scrapping, networking, data handling), and finally some slightly more advanced concepts like the SQL language, object oriented programming, and visualization. Pair this specialization with...
+
+#### 6) [Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python)
+
+Taught by Christopher Brooks, Daniel Romero, Kevyn Collins-Thompson, and V. G. Vinod Vydiswaran, this 5-course specialization is a continuation of the previous one. This is much more advanced and if you're fresh out of the previous series this might prove a bit tough handle. The lectures are awesome and supporting material is more than enough to fill your brain. This course will semi-force you to go to documentation pages and read stuff which, if you're new to Python and Data Science, you might find hard to manage, but keep in mind that it is a necessary skill to have when programming (in fact, as you get more involved with programming later on you might need to use libraries where there is no documentation!). With searching and dedication (and StackOverflow for the harder stuff), you can complete this. On the contrary, for those with mathematics and/or statistics backgrounds and some familiriaty with programming, this series should be rather easy to complete (maybe even try going into more advanced material directly).
 
 ### Udemy (paid)
 
