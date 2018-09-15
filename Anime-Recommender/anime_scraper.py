@@ -40,22 +40,7 @@ def get_anime_features(anime_name="Lovely★Complex"):
         resp = requests.get(url)
         soup = BS(resp.text, 'lxml')
 
-        reviews_list = []
-        ratings_list = []
-        for review in soup.findAll("div", {"class":"spaceit textReadability word-break pt8 mt8"}):
-            # replace whitespace, remove the first part (ratings)
-            reviews_list.append(re.sub("\s+", " ", review.text.split("Enjoyment")[1][3:].strip()))
-            # take the ratings and typecast them to an array
-            ratings_list.append(np.array([t.text for t in review.findAll('td')]).reshape((6,2))[:,1].astype(int))
-
-        # Create a feature out of 6 ratings, on a 0-10 scale 
-        reviewer_ratings = np.array(ratings_list).mean(0)
-        rating_names = list(np.array([t.text for t in review.findAll('td')]).reshape((6,2))[:,0])
-
-        # create a feature row by concatenating the reviews with the average ratings
-        features = reviews_list + list(reviewer_ratings)
-
-        # Save the whole page so if we need more data
+	    # Save the whole page so if we need more data
         # we don't have to scrape MAL again
         # Also, clear the name of punctuation so that it doesn't mess with the file system
         file = "anime_pages/"+"".join(c if c not in punctuation else " " for c in anime_name )+".html"
@@ -63,13 +48,38 @@ def get_anime_features(anime_name="Lovely★Complex"):
             written = f.write(resp.text)
             if written < 10:
                 print("Something might have went wrong with:", anime_name)
+
+
+	    description = soup.find("span", {"itemprop":"description"}).text
+
+        reviews_list = []
+        ratings_list = []
+	
+        for review in soup.findAll("div", {"class":"spaceit textReadability word-break pt8 mt8"}):
+            # replace whitespace, remove the first part (ratings)
+            reviews_list.append(re.sub("\s+", " ", review.text.split("Enjoyment")[1][3:].strip()))
+            # take the ratings and typecast them to an array
+            ratings_list.append(np.array([t.text for t in review.findAll('td')]).reshape((6,2))[:,1].astype(int))
+
+        # if reviews were found, average the 4 ratings (per category)
+        # else create 10 empty entries
+	    if ratings_list:
+            reviewer_ratings = np.array(ratings_list).mean(0) # shape: (6,) 
+        else:
+            reviews_list = [0] * 4
+            ratings_list = [0] * 6
+
+        # create a feature row by concatenating the reviews with the average ratings
+        features = [description] + reviews_list + list(reviewer_ratings)
+
+        
             
         return features
     except Exception as e:
         print("Something went wrong with:", anime_name)
         print(e)
         log.write("Error: {}\nAnime: {}\n".format(e, anime_name))
-        return [0] * 10
+        return [0] * 11
         
 
 
@@ -77,6 +87,6 @@ if __name__ == "__main__":
     log = open("scraping_log.txt", 'w')
     feats = [get_anime_features(name) for name in tqdm(anime_list)]
     log.close()
-    df = pd.DataFrame(feats, columns="Reviwer1 Reviwer2 Reviwer3 Reviwer4".split()+rating_names, index=anime_list)
+    df = pd.DataFrame(feats, columns="Description Reviwer1 Reviwer2 Reviwer3 Reviwer4".split()+rating_names, index=anime_list)
     #print(df.head())
     df.to_excel("anime_additional_features.xlsx")
