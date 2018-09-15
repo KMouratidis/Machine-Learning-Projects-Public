@@ -30,17 +30,18 @@ sel = sel["IDs"].apply(lambda x: "https://myanimelist.net/anime/{}".format(x))
 rating_names = ['Overall', 'Story', 'Animation', 'Sound', 'Character', 'Enjoyment']
 
 # Crawler, returns a list of 10 features (4 top reviews -text- and their average ratings)
-def get_anime_features(anime_name="Lovely★Complex"):
+def get_anime_features(anime_name="Lovely★Complex", url=None):
     
     # Polite crawling 
     time.sleep(3)
     
     try:
-        url = sel[anime_name]
+        if url is None:
+            url = sel[anime_name]
         resp = requests.get(url)
         soup = BS(resp.text, 'lxml')
 
-	    # Save the whole page so if we need more data
+        # Save the whole page so if we need more data
         # we don't have to scrape MAL again
         # Also, clear the name of punctuation so that it doesn't mess with the file system
         file = "anime_pages/"+"".join(c if c not in punctuation else " " for c in anime_name )+".html"
@@ -50,11 +51,11 @@ def get_anime_features(anime_name="Lovely★Complex"):
                 print("Something might have went wrong with:", anime_name)
 
 
-	    description = soup.find("span", {"itemprop":"description"}).text
+        description = soup.find("span", {"itemprop":"description"}).text
 
         reviews_list = []
         ratings_list = []
-	
+
         for review in soup.findAll("div", {"class":"spaceit textReadability word-break pt8 mt8"}):
             # replace whitespace, remove the first part (ratings)
             reviews_list.append(re.sub("\s+", " ", review.text.split("Enjoyment")[1][3:].strip()))
@@ -63,11 +64,16 @@ def get_anime_features(anime_name="Lovely★Complex"):
 
         # if reviews were found, average the 4 ratings (per category)
         # else create 10 empty entries
-	    if ratings_list:
+        if ratings_list:
             reviewer_ratings = np.array(ratings_list).mean(0) # shape: (6,) 
         else:
             reviews_list = [0] * 4
             ratings_list = [0] * 6
+
+        # Ensure it always has 4 elements
+        if len(reviews_list) <4:
+            reviews_list.extend([0]*(4-len(reviews_list)))
+            
 
         # create a feature row by concatenating the reviews with the average ratings
         features = [description] + reviews_list + list(reviewer_ratings)
