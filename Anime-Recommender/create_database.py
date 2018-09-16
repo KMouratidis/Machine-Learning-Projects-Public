@@ -51,7 +51,7 @@ df.drop(["title_english", "title_japanese", "title_synonyms",
          "airing", "broadcast", "background", "licensor",
          "opening_theme", "ending_theme", "aired"], axis=1, inplace=True)
 # Convert duration to numeric
-df["duration"] = df["duration"].apply(lambda x: x.split()[0]).str.replace("Unknown", '24').astype(int)
+df["duration"] = df["duration"].apply(lambda x: x.split()[0] if len(x.split())>1 and 'min' in x.split()[1] else '0').str.replace("Unknown", '0').astype(int)
 # This creates a set of all different genres
 genres = set([f for y in df["genre"].tolist()
               for x in [y.split(", ") if isinstance(y,str) else "None"]
