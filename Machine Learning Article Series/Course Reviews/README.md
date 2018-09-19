@@ -7,6 +7,9 @@
 * [Python for Everybody Specialization](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#5-python-for-everybody-specialization)
 * [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
 
+#### Computer Science:
+#### 1) [Crash Course Computer Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-crash-course-computer-science)
+
 #### Deep Learning:
 
 * [Coursera Deep Learning - Andrew Ng](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#2-deep-learning-specialization-by-andrew-ng)
@@ -91,6 +94,59 @@ Python for Everybody is a 5-course specialization offered by the University of M
 #### 6) [Applied Data Science with Python Specialization](https://www.coursera.org/specializations/data-science-python)
 
 Taught by Christopher Brooks, Daniel Romero, Kevyn Collins-Thompson, and V. G. Vinod Vydiswaran, this 5-course specialization is a continuation of the previous one. This is much more advanced and if you're fresh out of the previous series this might prove a bit tough handle. The lectures are awesome and supporting material is more than enough to fill your brain. This course will semi-force you to go to documentation pages and read stuff which, if you're new to Python and Data Science, you might find hard to manage, but keep in mind that it is a necessary skill to have when programming (in fact, as you get more involved with programming later on you might need to use libraries where there is no documentation!). With searching and dedication (and StackOverflow for the harder stuff), you can complete this. On the contrary, for those with mathematics and/or statistics backgrounds and some familiriaty with programming, this series should be rather easy to complete (maybe even try going into more advanced material directly).
+
+
+### YouTube
+
+#### 1) [Crash Course Computer Science](https://www.youtube.com/playlist?list=PLME-KWdxI8dcaHSzzRsNuOLXtM2Ep_C7a)
+
+This is probably **the** best introduction to Computer Science I have come across. It covers a wide array of topics starting from the lowest possible level (current and transistors) and from there building all the way up to Machine Learning, Cryptocurrencies, and more. For those interested in Data Science here are the videos I would suggest you take a more careful look:
+* Video #3, Boolean Logic & Logic Gates:
+AND, OR, and NOT operations are extremely useful in your
+day-to-day Data Science life. Boolean logic will help you
+not only structure your conditional statements in Python
+later on but also get you started on Logic Programming
+which is useful for NLP (much later on).
+* Videos #4-5,
+Getting the gist of bits, bytes, and their addition will
+help you understand why adding the GDP of China and the
+US suddenly returns some seemingly random negative number.
+Encoding of characters with numbers is a concept you will 
+encounter again much later (if you have Python installed,
+execute `ord('a')` for fun).
+* Video #8, Instructions & Programs:
+By explaining how CPU instructions work, Carrie Anne 
+implicitely introduces you to control flow (loops, ifs).
+If you're up for it, write a Python function (say 
+`def func(): ...`) with a simple for loop, then run 
+`from dis import dis` and `dis(func)`. Disassemblying 
+a function will become a powerful tool in your arsenal for
+optimizing your Python code in the future.
+* Video #12-14, Programming, Algorithms, Data Structures:
+It is here you're more formally introduced to programming:
+variables, loops, conditionals, functions, sorting algorithms,
+algorithmic complexity, data types and structures.
+* Video #16, Software Engineering:
+This video describes the process of creating (quality) programs
+(testing, collaboration, APIs), object orientation 
+* Video #19, Memory & Storage:
+The key takeaway here is to understand the memory hierarchy. SSDs
+are fast, but RAM is faster. CPU cache is the fastest. The gap has 
+diminished, but still exists.
+* Video #20-21, Files & File Systems - Compression:
+These two are less important yet insightful. You'll learn the
+basics of how images (RGB pixels) and other files are encoded,
+and the basics of compression. Compression is a neat topic that
+will later help you understand the speed-memory-accuracy trade-offs.
+* Video #26, Graphical User Interfaces:
+GUIs are not too widespread in Data Science but getting the hang of
+how they work (Event-Driven Programming) and learning how
+to create one yourself will pay off later.
+* Video #27, 3D Graphics:
+If you're planning on going into Computer Vision, this is perhaps
+the most important video of the series. Learning about projections
+is useful for AR/VR applications, as well as many common CV tasks.
+* Videos #34-37: Our bread and butter.
 
 ### Udemy (paid)
 
