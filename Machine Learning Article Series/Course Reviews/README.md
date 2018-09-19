@@ -8,7 +8,7 @@
 * [Udemy Data Science Machine Learning Bootcamp](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-python-for-data-science-and-machine-learning-bootcamp)
 
 #### Computer Science:
-#### 1) [Crash Course Computer Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-crash-course-computer-science)
+* [Crash Course Computer Science](https://github.com/KMouratidis/Machine-Learning-Projects-Public/blob/master/Machine%20Learning%20Article%20Series/Course%20Reviews/README.md#1-crash-course-computer-science)
 
 #### Deep Learning:
 
