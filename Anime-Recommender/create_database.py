@@ -14,7 +14,7 @@ db = conn.cursor()
 
 ## USERS
 print("Creating users table...")
-df = pd.read_csv("anime/users_filtered.csv")
+df = pd.read_csv("data/anime/users_filtered.csv")
 # Dropped users who (supposedly) watched more than
 # 100,000 episodes watching these (~20 minutes each,
 # for 12 hours a day, for 365 days a year) should take
@@ -32,7 +32,7 @@ df.to_sql("users", conn, index=False)
 ## RATINGS
 print("Creating ratings table...")
 # Use the same name to reclaim memory
-df = pd.read_csv("anime/animelists_filtered.csv")
+df = pd.read_csv("data/anime/animelists_filtered.csv")
 df.drop(["my_last_updated", "my_tags",
          "my_start_date", "my_finish_date"],
         axis=1, inplace=True)
@@ -40,7 +40,7 @@ df.to_sql("ratings", conn, index=False)
 
 ## ANIME
 print("Creating anime and genres tables")
-df = pd.read_csv("anime/AnimeList.csv")
+df = pd.read_csv("data/anime/AnimeList.csv")
 # Cleaning titles a bit by combining them all (except the main title) in one column
 df["alt_title"] = (df["title_english"] +" (" + df["title_japanese"]+"," + df["title_synonyms"] + ")")
 # Convert dates, set unknowns to 2001 (useful for when <2000 will be dropped)
@@ -68,6 +68,24 @@ df_genres.drop('genre', 1, inplace=True)
 df.to_sql("anime", conn, index=False)
 df_genres.to_sql("genres", conn, index=False)
 
+## Additional features
+print("Creating additional features")
+df2 = pd.read_sql("SELECT title, genre FROM anime", conn)
+df3 = pd.read_excel("data/anime/anime_additional_features.xlsx")
+# Get the data as a list of lists, flatten the list, get unique values (via conversion to set) 
+genres = [x.split(", ") if x is not None else "No Category" for x in df2["genre"].values ]
+unique_genres = list(set([genre if isinstance(genre_list, list) else genre_list
+                          for genre_list in genres
+                          for genre in genre_list]))
+# Create new columns, one-hot-encoded for every genre
+for genre in unique_genres:
+    df2[genre] = df2.apply(lambda x: 1 if genre in x else 0, 1)
+# Reset indices and join on them 
+df2 = df2.set_index("title")
+df3.index.name = "title"
+df3.join(df2, "title").fillna(0).reset_index().to_sql("features", conn, 
+                                                      index=False, if_exists="replace")
+                                                      
 
 # No need to commit, just close
 print("Closing...")

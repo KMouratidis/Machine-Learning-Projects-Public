@@ -38,10 +38,9 @@ def predict_anime(user_ratings, df, *, model=None, corrs=None,
 
         return preds
 
-    # some other model, here correlation
+    # some other model, here correlation-based
     else:
         results = corrs[anime_list]
-        pd.DataFrame(results, columns=[username])
 
         results = results[~results.index.isin(user_ratings.keys()
                             )].mean(1).sort_values(ascending=False).head(n)
