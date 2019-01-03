@@ -1,10 +1,17 @@
+from scipy.stats import mode
 import matplotlib.pyplot as plt
 import seaborn as sns
 import cv2
 from PIL import Image
 import numpy as np
 import random
+import warnings
 
+# https://stackoverflow.com/a/45076236/6655150
+from matplotlib.colors import ListedColormap 
+cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+
+warnings.filterwarnings('ignore')
 
 img = Image.open("tank_logo.png")
 im = np.array(img)
@@ -14,6 +21,7 @@ im_blue[:,:,2] += 140
 im_red = im.copy()
 im_red[:,:,0] += 140
 
+distance = lambda p1, p2: np.sqrt((p2[0]-p1[0])**2 + (p2[1]-p1[1])**2) 
 
 class Game:
     """
@@ -194,8 +202,8 @@ class Map:
     def to_array(self):
         return np.array([[len(patch.residents) for patch in row] for row in self.map])
 
-    def plot(self):
-        fig, ax = plt.subplots() 
+    def plot(self, *, k=3):
+        fig, ax = plt.subplots(figsize=(12,8)) 
 
         for tank in self.tanks:
             if tank.country.color == "blue":
@@ -221,15 +229,41 @@ class Map:
 
         ax.imshow(np.zeros((self.size, self.size)), cmap="gray_r")
         
+        
+        ## Plot area of influence
+        if len(self.tanks)>=1:
+            coords = np.array([(t.x, t.y) for t in self.tanks])
+            countries = np.array([t.country.color for t in self.tanks])
+
+            # K=3 nearest neighbor
+            distances = np.array([distance((x,y), (coords[:,0], coords[:,1])).argsort()[:k]
+                   for x,y in zip(xr, yr)])
+            if len(self.tanks)>2:
+                # https://stackoverflow.com/a/6252494/6655150
+                col = np.array([mode(countries[d]).mode[0] for d in distances])
+            else:
+                col = np.array([countries[d][0] for d in distances])
+            
+            col = np.array([1 if v=="blue" else 0 for v in col])
+
+            ax.pcolormesh(xx, yy, col.reshape((self.size+1, self.size+1)),
+                          cmap=cmap_light, vmin=0, vmax=1.)
+        
+        
         ax.set_xlim(1, self.size)
         ax.set_xticks(np.arange(1, self.size+1))
         ax.set_ylim(1, self.size)
         ax.set_yticks(np.arange(1, self.size+1))
 
+
         plt.show()
 
 if __name__ == '__main__':
-    m = Map(14)
+    n = 25
+    m = Map(n)
+
+    xx, yy = np.meshgrid(list(range(0,n+1)), list(range(0,n+1)))
+    xr, yr = xx.ravel(), yy.ravel()
 
     red = Country("red")
     blue = Country("blue")
@@ -257,26 +291,46 @@ if __name__ == '__main__':
         t2.move(7,7)
     else:
         t.move(7,7)
-        
     m.plot()
 
     Rommel.purchase_tanks(n=5)
     Montgomery.purchase_tanks(n=3)
-
     m.plot()
 
     Rommel.order_tank(Rommel.tanks[0], (3,3))
     m.plot()
 
     instructions = {
-        Rommel : [["order_tank", {'T': Rommel.tanks[0], 'pos': (6,11)}],
-                  ["order_tank", {'T': Rommel.tanks[1], 'pos': (8,10)}]
+        Rommel : [["order_tank", {'T': Rommel.tanks[0], 'pos': (5,8)}],
+                  ["order_tank", {'T': Rommel.tanks[1], 'pos': (6,9)}]
                  ],
-        Montgomery: [["order_tank", {'T': Montgomery.tanks[0], 'pos': (6,11)}],
-                     ["order_tank", {'T': Montgomery.tanks[1], 'pos': (9,12)}]
+        Montgomery: [["order_tank", {'T': Montgomery.tanks[0], 'pos': (18,19)}],
+                     ["order_tank", {'T': Montgomery.tanks[1], 'pos': (15,17)}]
                     ],
     }
-
     Turn(instructions=instructions)
-
     m.plot()
+
+
+    instructions = {
+        Rommel : [["order_tank", {'T': Rommel.tanks[0], 'pos': (8,11)}],
+                  ["order_tank", {'T': Rommel.tanks[1], 'pos': (9,10)}]
+                 ],
+        Montgomery: [["order_tank", {'T': Montgomery.tanks[0], 'pos': (14,12)}],
+                     ["order_tank", {'T': Montgomery.tanks[1], 'pos': (10,11)}]
+                    ],
+    }
+    Turn(instructions=instructions)
+    m.plot()
+
+
+    instructions = {
+    Montgomery: [["order_tank", {'T': Montgomery.tanks[2], 'pos': (7,18)}],
+                ],
+    }
+    Turn(instructions=instructions)
+    m.plot()
+
+
+    m.plot(k=1) # who can occupy first
+
